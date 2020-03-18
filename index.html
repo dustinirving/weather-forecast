@@ -5,31 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Title of Page -->
     <title>Weather Forecast</title>
+    <!-- Used font awesome to retrieve search icon -->
     <script src="https://kit.fontawesome.com/f18a0ebf2a.js" crossorigin="anonymous"></script>
+    <!-- Link to bootstrap for stlying -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- Header with main title -->
     <header class="text-center h1 bg-dark text-white p-3 mb-0">Weather Dashboard</header>
+    <!-- Used Bootstrap's grid system for page layout -->
+    <!-- A Row with two columns (Left Sidebar and Main Content) -->
     <div class="row">
+        <!-- Left sidebar -->
         <div class="col-3 border pl-4 bg-light">
+            <!-- Header to add a city to the list -->
             <h4>Search for a City: </h4>
+            <!-- A row with two columns (Input and Search Button) -->
             <div class="row mb-3">
+                <!-- Input -->
                 <div class="col-8 pr-0">
                     <input id="cityInput" type="text" class="form-control">
                 </div>
+                <!-- Search Button -->
+                <!-- Iclass retrieves classes from font awesome for search icon -->
                 <div class="col-2 pl-0">
                     <button id="searchButton" class="btn btn-primary octicon-search"><i class="fas fa-search"></i></button>
                 </div>
             </div>
+            <!-- When the user enters a new city a button is appended to this div -->
             <div id="buttons" class="bg-white">
                 <button class="btn border btn-block mt-0 text-left city" value="ottawa">ottawa</button>
             </div>
         </div>
+        <!-- Main Content on the right -->
         <div class="col-9 border pl-5">
             <div class="row pb-3 pt-3">
+                <!-- This column contains the weather information for today's date for the specified location -->
                 <div class="col border pb-3">
+                    <!-- ID's are added to be updated with API weather information -->
                     <h3 id="city-name"></h3>
                     <p id="temperature"></p>
                     <p id="humidity"></p>
@@ -40,10 +56,14 @@
                     </div>
 
                 </div>
+                <!-- Thi row contains the 5-Day Forecast -->
                 <div class="row mt-3">
                     <div class="col-12">
+                        <!-- Title -->
                         <h4>5-Day Forecast:</h4>
                     </div>
+                    <!-- Each Column contains 1 day of the 5 day forecast -->
+                    <!-- IDs used to target elements to be updated with the API information -->
                     <div class="col-2 bg-primary border ml-3 text-white rounded">
                         <h5 id="date1">Date</h5>
                         <img id="weather-icon1" src="" alt="">
@@ -75,15 +95,12 @@
                         <p id="humid5">Humidity</p>
                     </div>
                 </div>
-
-                <div class="row">
-
-
-                </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    </div>
+    <!-- Link to javscript file -->
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
